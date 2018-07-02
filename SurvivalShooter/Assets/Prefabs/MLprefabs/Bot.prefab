@@ -105,7 +105,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &1943641253633846
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
@@ -164,13 +164,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1298345094734142}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 35.51354, y: 20.208834, z: -42.541954}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4048896996084240}
   - {fileID: 4201665836883664}
   - {fileID: 4251514627618974}
-  - {fileID: 4483906180693142}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -185,6 +184,7 @@ Transform:
   m_LocalScale: {x: 0.99999994, y: 1, z: 1}
   m_Children:
   - {fileID: 4197754759296422}
+  - {fileID: 4483906180693142}
   m_Father: {fileID: 4229745265701598}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -195,11 +195,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1943641253633846}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.977, z: 0.791}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4229745265701598}
-  m_RootOrder: 3
+  m_Father: {fileID: 4251514627618974}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &54098206704076888
 Rigidbody:
@@ -545,9 +545,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eyes: {fileID: 4483906180693142}
-  rayCount: 15
-  angles: 160
-  maxDistance: 15
+  rayCount: 3
+  angles: 90
+  maxDistance: 70
 --- !u!114 &114485556992543188
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -561,7 +561,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damagePerShot: 20
   timeBetweenBullets: 0.12
-  range: 100
+  range: 70
+  maxShoot: 250
+  shootCounts: 0
   faceLight: {fileID: 108261502219294692}
   fireButton: 0
 --- !u!114 &114656110231874108
@@ -577,7 +579,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 100
   currentHealth: 0
-  deathClip: {fileID: 8300000, guid: d36a393bca4582043982db9089e1694f, type: 3}
   flashSpeed: 5
 --- !u!120 &120188415297017932
 LineRenderer:

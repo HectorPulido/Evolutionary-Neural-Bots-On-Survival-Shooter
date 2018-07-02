@@ -40,8 +40,8 @@ namespace Evolutionary_perceptron.Examples.Survival
         void Move ()
         {
             // Set the movement vector based on the axis input.
-            movement.Set (h, 0f, v);
-            
+            movement = transform.forward * v + transform.right*h;
+                        
             // Normalise the movement vector and make it proportional to the speed per second.
             movement = movement.normalized * speed;
 

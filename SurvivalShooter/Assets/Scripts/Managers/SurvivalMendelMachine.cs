@@ -7,6 +7,10 @@ namespace Evolutionary_perceptron.Examples.Survival
     public class SurvivalMendelMachine : MendelMachine
     {
         public Transform[] spawnPoints;
+        public Transform[] monsterSpawnPoints;
+
+        public GameObject monsterPrefab;
+
         public float lifeTime;
 
         int index;
@@ -44,6 +48,12 @@ namespace Evolutionary_perceptron.Examples.Survival
             for (int i = 0; i < individualsPerGeneration; i++)
             {
                 InstantiateBot(population[i], lifeTime, spawnPoints[i], i);
+            }
+
+            for (int i = 0; i < monsterSpawnPoints.Length; i++)
+            {
+                var g = Instantiate(monsterPrefab, monsterSpawnPoints[i].position, Quaternion.identity);
+                Destroy(g, lifeTime);
             }
 
         }

@@ -102,15 +102,19 @@ namespace Evolutionary_perceptron.Examples.Survival
             if(Physics.Raycast (shootRay, out shootHit, range, shootableMask))
             {
                 // Try and find an EnemyHealth script on the gameobject hit.
-                BotHealth ph = shootHit.collider.GetComponent<BotHealth>();
+                Health ph = shootHit.collider.GetComponent<Health>();
 
                 // If the EnemyHealth component exist...
                 if (ph != null)
                 {
                     // ... the enemy should take damage.
-                    ph.TakeDamage (damagePerShot);
-                    transform.parent.SendMessage("DamageAppied", damagePerShot);
+                    ph.TakeDamage(damagePerShot);
+                    transform.parent.SendMessage("ModifyFitness", 2);
 
+                }
+                else
+                {
+                    transform.parent.SendMessage("ModifyFitness", -50);
                 }
 
                 // Set the second position of the line renderer to the point the raycast hit.
@@ -121,6 +125,8 @@ namespace Evolutionary_perceptron.Examples.Survival
             {
                 // ... set the second position of the line renderer to the fullest extent of the gun's range.
                 gunLine.SetPosition (1, shootRay.origin + shootRay.direction * range);
+
+                transform.parent.SendMessage("ModifyFitness", -50);
             }
         }
     }

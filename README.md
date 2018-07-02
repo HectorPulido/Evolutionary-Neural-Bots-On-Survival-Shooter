@@ -11,6 +11,15 @@ https://www.twitch.tv/hector_pulido_<br/>
 ## HOW TO USE
 Open it on unity 2018 or greater (sorry about that >-< ), and play around with the project, I recomend to read [Evolutionary-Neural-Networks-on-unity-for-bots](https://github.com/HectorPulido/Evolutionary-Neural-Networks-on-unity-for-bots) .
 
+## Fitness function
+A useful shoot give 2 points<br/>
+A fail shoot give -5 points <br/>
+When the bot move a lot give 1 point <br/>
+When health is lost give -1 points <br/>
+
+## Game modes
+There are 2 game modes with zombies and without zombies
+
 ## Patreon
 Please consider Support on Patreon<br/>
 ![Please consider support on patreon](/Images/Patreon.png)<br/>
