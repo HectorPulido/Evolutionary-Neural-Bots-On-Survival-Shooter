@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Evolutionary_perceptron.Examples.Survival
+namespace EvolutionaryPerceptron.Examples.Survival
 {
     public class BotMovement : MonoBehaviour
     {

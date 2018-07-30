@@ -1,15 +1,15 @@
 ﻿using UnityEngine;
-using Evolutionary_perceptron.MendelMachine;
+using EvolutionaryPerceptron.MendelMachine;
 
-namespace Evolutionary_perceptron
+namespace EvolutionaryPerceptron
 {
-    [RequireComponent(typeof(NeuralBot))]
+    [RequireComponent(typeof(Brain))]
     public class BotHandler : MonoBehaviour
     {
-        protected NeuralBot nb;
+        protected Brain nb;
         protected virtual void Start()
         {
-            nb = GetComponent<NeuralBot>();
+            nb = GetComponent<Brain>();
         }
 
     }

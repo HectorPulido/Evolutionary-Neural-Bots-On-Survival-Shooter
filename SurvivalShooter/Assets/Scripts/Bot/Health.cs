@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-namespace Evolutionary_perceptron.Examples.Survival
+namespace EvolutionaryPerceptron.Examples.Survival
 {
     public class Health : MonoBehaviour
     {

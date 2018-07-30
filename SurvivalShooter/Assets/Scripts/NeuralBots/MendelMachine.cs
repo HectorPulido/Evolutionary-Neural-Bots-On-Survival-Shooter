@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
-using Evolutionary_perceptron;
-namespace Evolutionary_perceptron.MendelMachine
+using EvolutionaryPerceptron;
+namespace EvolutionaryPerceptron.MendelMachine
 {   
     public class MendelMachine : MonoBehaviour
     {
@@ -23,7 +23,7 @@ namespace Evolutionary_perceptron.MendelMachine
         public int elitism = 4;
         public int newIndividuals = 3;
         public int individualsPerGeneration = 10;
-        public NeuralBot prefab;
+        public Brain prefab;
 
         [Header("Indicators")]
         public int generation;
@@ -63,9 +63,9 @@ namespace Evolutionary_perceptron.MendelMachine
             }
         }
 
-        protected virtual NeuralBot InstantiateBot(Individual individual, float lifeTime, Transform placeToInstantiate, int index)
+        protected virtual Brain InstantiateBot(Individual individual, float lifeTime, Transform placeToInstantiate, int index)
         {
-            NeuralBot nb = Instantiate(prefab,
+            Brain nb = Instantiate(prefab,
                     placeToInstantiate.position,
                     placeToInstantiate.rotation);
             nb.Initialize(this, individual.gen, activationFunction, learningPhase, lifeTime, index);
@@ -139,7 +139,7 @@ namespace Evolutionary_perceptron.MendelMachine
             return population;
         }
 
-        public virtual void NeuralBotDestroyed(NeuralBot neuralBot)
+        public virtual void NeuralBotDestroyed(Brain neuralBot)
         {
             population[neuralBot.Index].fitness = neuralBot.Fitness;
         }

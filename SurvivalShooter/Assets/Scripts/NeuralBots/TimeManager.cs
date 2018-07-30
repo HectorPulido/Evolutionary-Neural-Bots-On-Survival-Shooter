@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-namespace Evolutionary_perceptron.Util
+namespace EvolutionaryPerceptron.Util
 {
     public class TimeManager : MonoBehaviour
     {

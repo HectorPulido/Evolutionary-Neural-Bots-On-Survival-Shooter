@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
 
-namespace Evolutionary_perceptron.Examples.Survival.Enemy
+namespace EvolutionaryPerceptron.Examples.Survival.Enemy
 {
-    using Evolutionary_perceptron.Examples.Survival;
+    using EvolutionaryPerceptron.Examples.Survival;
 
     [RequireComponent(typeof(NavMeshAgent))]
     public class EnemyMovement : MonoBehaviour
@@ -80,6 +80,7 @@ namespace Evolutionary_perceptron.Examples.Survival.Enemy
         }
         void Dead()
         {
+            tag = "Untagged";
             Invoke("Destroy", 5);
         }
         private void Destroy()

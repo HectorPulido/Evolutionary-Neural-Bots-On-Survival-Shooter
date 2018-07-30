@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Evolutionary_perceptron;
+using EvolutionaryPerceptron;
 
-namespace Evolutionary_perceptron.Examples.Survival
+namespace EvolutionaryPerceptron.Examples.Survival
 {
     //[ExecuteInEditMode]
     public class CustomBotHandler : BotHandler
@@ -33,7 +33,7 @@ namespace Evolutionary_perceptron.Examples.Survival
             d = new float[rayCount];
             e = new float[rayCount];
 
-            input = new float[1, d.Length + e.Length + 2];
+            input = new double[1, d.Length + e.Length + 2];
         }
 
         Vector3 lastPos;
@@ -50,7 +50,7 @@ namespace Evolutionary_perceptron.Examples.Survival
             lastPos = transform.position;
         }
 
-        float[,] input;
+        double[,] input;
         void Update()
         {
             GetSensors();
@@ -64,14 +64,14 @@ namespace Evolutionary_perceptron.Examples.Survival
                 input[0, i + d.Length] = e[i];
             }
 
-            input[0, d.Length + e.Length] = (float)ph.currentHealth / ph.startingHealth;
-            input[0, d.Length + e.Length + 1] = (float)ps.shootCounts / ps.maxShoot;
+            input[0, d.Length + e.Length] = (double)ph.currentHealth / ph.startingHealth;
+            input[0, d.Length + e.Length + 1] = (double)ps.shootCounts / ps.maxShoot;
 
             var output = nb.SetInput(input);
 
-            pm.h = output[0, 0];
-            pm.v = output[0, 1];
-            pm.turn = Mathf.Clamp(output[0, 2], -1, 1);
+            pm.h = (float)output[0, 0];
+            pm.v = (float)output[0, 1];
+            pm.turn = Mathf.Clamp((float)output[0, 2], -1, 1);
             ps.fireButton = output[0, 3] > 0.9f;
         }
 

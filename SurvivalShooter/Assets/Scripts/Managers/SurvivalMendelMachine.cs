@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace Evolutionary_perceptron.Examples.Survival
+namespace EvolutionaryPerceptron.Examples.Survival
 {
-    using Evolutionary_perceptron.MendelMachine;
+    using EvolutionaryPerceptron.MendelMachine;
     public class SurvivalMendelMachine : MendelMachine
     {
         public Transform[] spawnPoints;
@@ -22,7 +22,7 @@ namespace Evolutionary_perceptron.Examples.Survival
 
             StartCoroutine(InstantiateBotCoroutine());
         }
-        public override void NeuralBotDestroyed(NeuralBot neuralBot)
+        public override void NeuralBotDestroyed(Brain neuralBot)
         {
             base.NeuralBotDestroyed(neuralBot);
 
